@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DiceWatch.Actions;
+﻿using DiceWatch.Actions;
 using DiceWatch.FeatureStates;
+using DiceWatch.ViewModels;
 using Fluxor;
 
 namespace DiceWatch.Reducers;
@@ -16,6 +12,8 @@ public static class MainMenuReducers
         new MainMenuState("Display Results");
 
     [ReducerMethod]
-    public static MainMenuState ReduceResumeRecordingAction(MainMenuState state, DisplayResultsAction action) =>
+    public static MainMenuState ReduceResumeRecordingAction(MainMenuState state, ResumeRecordingAction action) =>
         new MainMenuState("Resume Recording");
+
+    public static string GetName() => "Don't you, forget about me!";
 }

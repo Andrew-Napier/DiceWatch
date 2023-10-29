@@ -1,4 +1,5 @@
-﻿using DiceWatch.ViewModels;
+﻿using DiceWatch.Reducers;
+using DiceWatch.ViewModels;
 using Fluxor;
 using Microsoft.Extensions.Logging;
 
@@ -31,6 +32,7 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
+        Console.Error.WriteLine(MainMenuReducers.GetName());
         // Any time we can't use a 0-parameter constructor, we should make sure 
         // the DI Services are aware of the type.  As our view-model(s) need
         // services injected, they're explicitly set up now:
@@ -41,8 +43,9 @@ public static class MauiProgram
         // wire-up in the service build-up:
         builder.Services.AddTransient<MainMenu>();
 
-        builder.Services.AddFluxor(o =>
-            o.ScanAssemblies(typeof(MauiProgram).Assembly));
+        builder.Services.AddFluxor(o => { o.ScanAssemblies(typeof(MauiProgram).Assembly); });
+
+
         return builder.Build();
     }
 }
