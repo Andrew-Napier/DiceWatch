@@ -1,13 +1,12 @@
 ﻿using DiceWatch.Views;
 
-namespace DiceWatch
+namespace DiceWatch;
+
+public partial class AppShell : Shell
 {
-    public partial class AppShell : Shell
+    public AppShell()
     {
-        public AppShell()
-        {
-            InitializeComponent();
-            Routing.RegisterRoute(nameof(RecordingPage), typeof(RecordingPage));
-        }
+        InitializeComponent();
+        Routing.RegisterRoute(nameof(RecordingPage), typeof(RecordingPage));
     }
 }

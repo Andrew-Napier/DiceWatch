@@ -1,13 +1,12 @@
 ﻿using DiceWatch.ViewModels;
 
-namespace DiceWatch
+namespace DiceWatch;
+
+public partial class MainMenu : ContentPage
 {
-    public partial class MainMenu : ContentPage
+    public MainMenu(MainMenuViewModel vm)
     {
-        public MainMenu(MainMenuViewModel vm)
-        {
-            InitializeComponent();
-            BindingContext = vm;
-        }
+        InitializeComponent();
+        BindingContext = vm;
     }
 }
