@@ -2,13 +2,28 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:DiceWatch.ViewModels"
-             x:Class="DiceWatch.MainPage"
+             x:Class="DiceWatch.MainMenu"
              Title="Dice Watch">
-
-    <ContentPage.BindingContext>
-        <vm:MainMenuViewModel/>
-    </ContentPage.BindingContext>
-
+<!--
+Points to note:
+1.  The ContentPage declaration, should include a namespace to access the ViewModel that 
+    corresponds to this view.  Here, I declare the "xmlns:vm" for this purpose.
+2.  If I had a zero paramater constructor for my ViewModel, I could use this code:
+        <ContentPage.BindingContext>
+            <vm:MainMenuViewModel/>
+        </ContentPage.BindingContext>
+    ...to bind the view-model to the view.  But if you need to inject services into the ViewModel
+    then you need to inject the View-Model, via the code-behind constructor.
+    
+3.  If this were a page that was navigated to, then it should have an entry in AppShell, using
+    the Routing.RegisterRoute() method.  - In this case, it is the landing page for the app and
+    doesn't need to be registered?
+4.  Using the "{Binding ...} syntax will reference the ViewModel property of the same name.  If 
+    you're able to use the <ContentPage.BindingContext> tag, then Intellisense can ctrl-click 
+    naviagte through to the vm property
+    
+5.  I'm a developer, not a Graphic Designer.  I have no design aesthetic or taste...
+-->
     <ScrollView>
         <VerticalStackLayout
             Spacing="25"

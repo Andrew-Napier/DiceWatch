@@ -1,10 +1,13 @@
-﻿namespace DiceWatch
+﻿using DiceWatch.ViewModels;
+
+namespace DiceWatch
 {
-    public partial class MainPage : ContentPage
+    public partial class MainMenu : ContentPage
     {
-        public MainPage()
+        public MainMenu(MainMenuViewModel vm)
         {
             InitializeComponent();
+            BindingContext = vm;
         }
     }
 }
