@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:DiceWatch.ViewModels"
+             x:Class="DiceWatch.MainPage"
+             Title="Dice Watch">
+
+    <ContentPage.BindingContext>
+        <vm:MainMenuViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Pictures of dice"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label FontSize="26" BackgroundColor="Pink" Text="{Binding LastPressed}"></Label>
+
+            <Button
+                Text="Start Recording"
+                Command="{Binding StartRecordingCommand}"/>
+            <Button
+                Text="Resume Recording"
+                Command="{Binding ResumeRecordingCommand}"/>
+            <Button
+                Text="Show Results"
+                Command="{Binding DisplayResultsCommand}"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
