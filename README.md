@@ -15,5 +15,5 @@ at finding good guidance, probably due to relative uncoolness of Microsoft's mob
 
 So, this is a learning tool for me, with the idea that I will return to the app to try new (or newly discovered) ideas.  
 
-If you're new to .NET Maui, (or you're me, returning to the project after a period of time) start with MauiProgram.cs and hope I 
+If you're new to .NET Maui, (or you're me, returning to the project after a period of time) start with [MauiProgram.cs](./DiceWatch/MauiProgram.cs) and hope I 
 lived up to my promise to write comments in the code.
