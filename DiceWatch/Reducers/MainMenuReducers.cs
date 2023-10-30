@@ -14,6 +14,4 @@ public static class MainMenuReducers
     [ReducerMethod]
     public static MainMenuState ReduceResumeRecordingAction(MainMenuState state, ResumeRecordingAction action) =>
         new MainMenuState("Resume Recording");
-
-    public static string GetName() => "Don't you, forget about me!";
 }

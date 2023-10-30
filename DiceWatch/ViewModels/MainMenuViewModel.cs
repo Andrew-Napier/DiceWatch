@@ -39,7 +39,7 @@ public partial class MainMenuViewModel : ObservableObject
     }
 
     // Similar shortcut shenanigans... The RelayCommand attribute gives you a convention named
-    // Command proptery that can be referenced in your view.  This method can be referenced from
+    // Command property that can be referenced in your view.  This method can be referenced from
     // the view by {Binding StartRecordingCommand}
     [RelayCommand]
     async Task StartRecording()
@@ -47,14 +47,15 @@ public partial class MainMenuViewModel : ObservableObject
         await Current.GoToAsync(nameof(RecordingPage));
     }
 
+    // The RelayCommand also allows you to call void synchronous methods.
     [RelayCommand]
-    async Task ResumeRecording()
+    void ResumeRecording()
     {
         _dispatcher.Dispatch(new ResumeRecordingAction());
     }
 
     [RelayCommand]
-    async Task DisplayResults()
+    void DisplayResults()
     {
         _dispatcher.Dispatch(new DisplayResultsAction());
     }
