@@ -41,7 +41,7 @@ public static class MauiProgram
 
         builder.Services.AddFluxor(o =>
         {
-            // Standard Fluxor boiler plate code to find reducers
+            // Standard Fluxor boiler plate code to find reducers:
             o.ScanAssemblies(typeof(MauiProgram).Assembly);
 
             // By default, the store-lifetime is "scoped". In a mobile app this means 
@@ -52,7 +52,6 @@ public static class MauiProgram
             // (See also: https://github.com/mrpmorris/Fluxor/issues/317#issuecomment-1141519409 )
             o.WithLifetime(StoreLifetime.Singleton);
         });
-
 
         return builder.Build();
     }
